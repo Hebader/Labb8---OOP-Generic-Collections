@@ -19,7 +19,7 @@
             Employee E3 = new Employee();
             E3.Id = 13;
             E3.Name = "Tomas";
-            E3.Gender = "Male,";
+            E3.Gender = "Male";
             E3.Salary = 25000;
 
             Employee E4 = new Employee();
@@ -45,32 +45,28 @@
         
             foreach (Employee emp in stack) // Gör en foreach loop för att skriva ut objekten i stacken
             {
-                Console.WriteLine($"ID : {emp.Id} Name: {emp.Name}. Gender {emp.Gender}. Salary {emp.Salary}");
+                Console.WriteLine($"ID : {emp.Id} - Name: {emp.Name} - Gender: {emp.Gender} - Salary: {emp.Salary}");
                 Console.WriteLine($"There is {stack.Count} items in the stack."); // Skriver ut antal objekt i stacken
             }
+
+            // stack.pop metoden tar bort objekt från stacken, sist in först ut
             Console.WriteLine("***********************************");
-
-            E1 = stack.Pop();
-            Console.WriteLine($"ID : {E1.Id} Name: {E1.Name}");
-            Console.WriteLine("Items left in the stack " + stack.Count());
-            E2 = stack.Pop();
-            Console.WriteLine($"ID : {E2.Id} Name: {E2.Name}");
-            Console.WriteLine("Items left  in the stack " + stack.Count());
-            E3 = stack.Pop();
-            Console.WriteLine($"ID : {E3.Id} Name: {E3.Name}");
+            Employee stackemp1 = stack.Pop();
+            Console.WriteLine($"ID : {stackemp1.Id} Name: {stackemp1.Name}");
             Console.WriteLine("Items  left in the stack " + stack.Count());
-            E4 = stack.Pop();
-            Console.WriteLine($"ID : {E4.Id} Name: {E4.Name}");
-            Console.WriteLine("Items left in the stack " + stack.Count());
-            E5 = stack.Pop();
-            Console.WriteLine($"ID : {E5.Id} Name: {E5.Name}");
+            Employee stackemp2 = stack.Pop();
+            Console.WriteLine($"ID : {stackemp2.Id} Name: {stackemp2.Name}");
+            Console.WriteLine("Items  left in the stack " + stack.Count());
+            Employee stackemp3 = stack.Pop();
+            Console.WriteLine($"ID : {stackemp3.Id} Name: {stackemp3.Name}");
+            Console.WriteLine("Items  left in the stack " + stack.Count());
+            Employee stackemp4 = stack.Pop();
+            Console.WriteLine($"ID : {stackemp4.Id} Name: {stackemp4.Name}");
+            Console.WriteLine("Items  left in the stack " + stack.Count());
+            Employee stackemp5 = stack.Pop();
+            Console.WriteLine($"ID : {stackemp5.Id} Name: {stackemp5.Name}");
             Console.WriteLine("Items  left in the stack " + stack.Count());
 
-
-            foreach (Employee emp in stack)
-            {
-                Console.WriteLine($"ID : {emp.Id}");
-            }
 
             Console.WriteLine("***********************************");
 
@@ -80,6 +76,7 @@
             stack.Push(E4);
             stack.Push(E5);
 
+            // stack.peek metoden pekar på objektet längst upp i stacken
             Employee puchEmp1 = stack.Peek();
             Console.WriteLine($"ID : {puchEmp1.Id} Name: {puchEmp1.Name}");
             Console.WriteLine("Items in the stack: " + stack.Count());
@@ -88,7 +85,7 @@
             Console.WriteLine("Items in the stack: " + stack.Count());
 
             Console.WriteLine("************************");
-
+            // Kollar om objekt nr 3 finns i stacken
             if (stack.Contains(E3))
 
             {
