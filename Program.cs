@@ -85,7 +85,7 @@
             Console.WriteLine("Items in the stack: " + stack.Count());
 
             Console.WriteLine("************************");
-            // Kollar om objekt nr 3 finns i stacken
+            // Kollar om objekt nr 3 finns i stacken genom stack.Contains metoden
             if (stack.Contains(E3))
 
             {
