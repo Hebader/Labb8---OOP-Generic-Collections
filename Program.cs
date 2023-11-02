@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Employee E1 = new Employee();
-            E1.Id = 11;
+            Employee E1 = new Employee(); // skapar ett objekt
+            E1.Id = 11;  // Tilldelar ett värde för Id i objektet
             E1.Name = "Anna";
             E1.Gender = "Female";
             E1.Salary = 20000;
@@ -34,35 +34,36 @@
             E5.Gender = "Female";
             E5.Salary = 28000;
 
-            Stack<Employee> stack = new Stack<Employee>();
-            stack.Push(E1);
+            //Gör en stack som innehåller Employee som datatyp
+            Stack<Employee> stack = new Stack<Employee>(); 
+            stack.Push(E1); //Lägger till objekten i stacken
             stack.Push(E2);
             stack.Push(E3);
             stack.Push(E4);
-            stack.Push(E5);
+            stack.Push(E5); // Objekten läggs på varandra, sist hamnar lämgst upp
 
         
-            foreach (Employee emp in stack)
+            foreach (Employee emp in stack) // Gör en foreach loop för att skriva ut objekten i stacken
             {
                 Console.WriteLine($"ID : {emp.Id} Name: {emp.Name}. Gender {emp.Gender}. Salary {emp.Salary}");
-                Console.WriteLine($"There is {stack.Count} items in the stack.");
+                Console.WriteLine($"There is {stack.Count} items in the stack."); // Skriver ut antal objekt i stacken
             }
             Console.WriteLine("***********************************");
 
-            Employee stackEmp1 = stack.Pop();
-            Console.WriteLine($"ID : {stackEmp1.Id} Name: {stackEmp1.Name}");
+            E1 = stack.Pop();
+            Console.WriteLine($"ID : {E1.Id} Name: {E1.Name}");
             Console.WriteLine("Items left in the stack " + stack.Count());
-            Employee stackEmp2 = stack.Pop();
-            Console.WriteLine($"ID : {stackEmp2.Id} Name: {stackEmp2.Name}");
+            E2 = stack.Pop();
+            Console.WriteLine($"ID : {E2.Id} Name: {E2.Name}");
             Console.WriteLine("Items left  in the stack " + stack.Count());
-            Employee stackEmp3 = stack.Pop();
-            Console.WriteLine($"ID : {stackEmp3.Id} Name: {stackEmp3.Name}");
+            E3 = stack.Pop();
+            Console.WriteLine($"ID : {E3.Id} Name: {E3.Name}");
             Console.WriteLine("Items  left in the stack " + stack.Count());
-            Employee stackEmp4 = stack.Pop();
-            Console.WriteLine($"ID : {stackEmp4.Id} Name: {stackEmp4.Name}");
+            E4 = stack.Pop();
+            Console.WriteLine($"ID : {E4.Id} Name: {E4.Name}");
             Console.WriteLine("Items left in the stack " + stack.Count());
-            Employee stackEmp5 = stack.Pop();
-            Console.WriteLine($"ID : {stackEmp5.Id} Name: {stackEmp5.Name}");
+            E5 = stack.Pop();
+            Console.WriteLine($"ID : {E5.Id} Name: {E5.Name}");
             Console.WriteLine("Items  left in the stack " + stack.Count());
 
 
@@ -87,10 +88,15 @@
             Console.WriteLine("Items in the stack: " + stack.Count());
 
             Console.WriteLine("************************");
-            if (E3 == stackEmp3)
+
+            if (stack.Contains(E3))
 
             {
-                Console.WriteLine("StackEmp3 is in stack");
+                Console.WriteLine("E3 is in  the stack.");
+            }
+            else
+            {
+                Console.WriteLine("E3 is not in the stack.");
             }
         }
     }
