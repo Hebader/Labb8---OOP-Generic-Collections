@@ -1,4 +1,6 @@
-﻿namespace Labb8___OOP_Generic_Collections
+﻿using System.Collections.Generic;
+
+namespace Labb8___OOP_Generic_Collections
 {
     internal class Program
     {
@@ -34,15 +36,17 @@
             E5.Gender = "Female";
             E5.Salary = 28000;
 
+
+            //Del 1 
             //Gör en stack som innehåller Employee som datatyp
-            Stack<Employee> stack = new Stack<Employee>(); 
+            Stack<Employee> stack = new Stack<Employee>();
             stack.Push(E1); //Lägger till objekten i stacken
             stack.Push(E2);
             stack.Push(E3);
             stack.Push(E4);
             stack.Push(E5); // Objekten läggs på varandra, sist hamnar lämgst upp
 
-        
+
             foreach (Employee emp in stack) // Gör en foreach loop för att skriva ut objekten i stacken
             {
                 Console.WriteLine($"ID : {emp.Id} - Name: {emp.Name} - Gender: {emp.Gender} - Salary: {emp.Salary}");
@@ -80,7 +84,7 @@
             Employee puchEmp1 = stack.Peek();
             Console.WriteLine($"ID : {puchEmp1.Id} Name: {puchEmp1.Name}");
             Console.WriteLine("Items in the stack: " + stack.Count());
-            Employee puchEmp2= stack.Peek();
+            Employee puchEmp2 = stack.Peek();
             Console.WriteLine($"ID : {puchEmp2.Id} Name: {puchEmp2.Name}");
             Console.WriteLine("Items in the stack: " + stack.Count());
 
@@ -95,9 +99,42 @@
             {
                 Console.WriteLine("E3 is not in the stack.");
             }
+
+            Console.WriteLine("***************************************");
+
+            List<Employee> mylist = new List<Employee>();
+
+            mylist.Add(E1);
+            mylist.Add(E2);
+            mylist.Add(E3);
+            mylist.Add(E4);
+            mylist.Add(E5);
+
+            if (mylist.Contains(E4))
+            {
+                Console.WriteLine("Employee4 object exists in the list.\n");
+            }
+
+            Employee firstMaleEmployee = mylist.Find(x => x.Gender == "Male");
+            if (firstMaleEmployee != null)
+            {
+                Console.WriteLine($"ID : {firstMaleEmployee.Id} - Name: {firstMaleEmployee.Name} - Gender: {firstMaleEmployee.Gender} - Salary: {firstMaleEmployee.Salary}\n");
+            }
+
+            List<Employee> maleEmployees = mylist.FindAll(x => x.Gender == "Male");
+            if (maleEmployees.Count > 0)
+            {
+                foreach (Employee emp in maleEmployees)
+                {
+                    Console.WriteLine($"ID : {emp.Id} - Name: {emp.Name} - Gender: {emp.Gender} - Salary: {emp.Salary}");
+                }
+
+            }
         }
+
     }
 }
+
 
 
    
