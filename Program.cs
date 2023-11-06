@@ -102,29 +102,31 @@ namespace Labb8___OOP_Generic_Collections
 
             Console.WriteLine("***************************************");
 
-            List<Employee> mylist = new List<Employee>();
+            //Del 2 list
+            List<Employee> mylist = new List<Employee>(); // Skapar en list med datatypen Employee
 
-            mylist.Add(E1);
+            mylist.Add(E1); //lägger till alla objekt i listan
             mylist.Add(E2);
             mylist.Add(E3);
             mylist.Add(E4);
             mylist.Add(E5);
 
-            if (mylist.Contains(E4))
+            if (mylist.Contains(E4)) // Om listan innehåller Employee nr 4
             {
                 Console.WriteLine("Employee4 object exists in the list.\n");
             }
 
-            Employee firstMaleEmployee = mylist.Find(x => x.Gender == "Male");
-            if (firstMaleEmployee != null)
+            //Hitta första male employee i listan
+            Employee firstMaleEmployee = mylist.Find(x => x.Gender == "Male"); // Hittar male med hjälp av Find metoden som innehåller lambda-uttryck 
+            if (firstMaleEmployee != null) // villkor sålänge det inte är null,dvs så länge det finns male i listan
             {
                 Console.WriteLine($"ID : {firstMaleEmployee.Id} - Name: {firstMaleEmployee.Name} - Gender: {firstMaleEmployee.Gender} - Salary: {firstMaleEmployee.Salary}\n");
             }
 
-            List<Employee> maleEmployees = mylist.FindAll(x => x.Gender == "Male");
+            List<Employee> maleEmployees = mylist.FindAll(x => x.Gender == "Male"); // Skapar en list med alla male employees
             if (maleEmployees.Count > 0)
             {
-                foreach (Employee emp in maleEmployees)
+                foreach (Employee emp in maleEmployees) // foreach loop för att skriva ut alla male
                 {
                     Console.WriteLine($"ID : {emp.Id} - Name: {emp.Name} - Gender: {emp.Gender} - Salary: {emp.Salary}");
                 }
